@@ -1,0 +1,13 @@
+[Unit]
+Description=kubernetes
+Wants=etcd.service
+After=etcd.service
+
+[Service]
+ExecStart=/usr/bin/kublet
+Restart=always
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
+
